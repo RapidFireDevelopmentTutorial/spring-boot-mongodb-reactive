@@ -20,30 +20,24 @@ import java.time.Duration;
 public class VehicleTrackingApplication {
 
 
-	@Autowired
-	@Qualifier("output")
-	private MessageChannel output;
+    @Autowired
+    @Qualifier("output")
+    private MessageChannel output;
 
-	@Autowired
-	private VehiclePositionEmitter queueService;
+    @Autowired
+    private VehiclePositionEmitterProcessor queueService;
 
 
-	@Bean
-	CommandLineRunner commandLineRunner(){
-		return args -> {
+    @Bean
+    CommandLineRunner commandLineRunner() {
+        return args -> {
+            queueService.getVehiclePositions().subscribe(vehicle -> System.out.println(vehicle));
+            Flux.interval(Duration.ofMillis(100)).subscribe(aLong -> output.send(MessageBuilder.withPayload(VehiclePosition.builder().registrationNumber(aLong + "").build()).build()));
+        };
+    }
 
-			queueService.getVehiclePositions().subscribe(vehicle -> {
-				System.out.println(vehicle);
-			});
-
-			Flux.interval(Duration.ofMillis(100)).subscribe(aLong -> {
-				output.send(MessageBuilder.withPayload(VehiclePosition.builder().registrationNumber(aLong+"").build()).build());
-			});
-		};
-	}
-
-	public static void main(String[] args) {
-		SpringApplication.run(VehicleTrackingApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(VehicleTrackingApplication.class, args);
+    }
 
 }

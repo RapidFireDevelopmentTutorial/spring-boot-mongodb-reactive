@@ -6,7 +6,7 @@ import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
 import reactor.core.publisher.Flux;
-import za.co.kubent.vt.VehiclePositionEmitter;
+import za.co.kubent.vt.VehiclePositionEmitterProcessor;
 import za.co.kubent.vt.domain.VehiclePosition;
 import za.co.kubent.vt.repository.VehiclePositionRepository;
 
@@ -15,7 +15,7 @@ import za.co.kubent.vt.repository.VehiclePositionRepository;
 public class QueueListener {
 
     @Autowired
-    private VehiclePositionEmitter queueService;
+    private VehiclePositionEmitterProcessor vehiclePositionEmitterProcessor;
 
     @Autowired
     private VehiclePositionRepository vehiclePositionRepository;
@@ -24,6 +24,6 @@ public class QueueListener {
     public void incoming(@Input(Sink.INPUT) Flux<VehiclePosition> messages) {
         messages.
                 switchMap(s -> vehiclePositionRepository.save(s))
-                .subscribe(s -> queueService.addVehiclePosition(s));
+                .subscribe(s -> vehiclePositionEmitterProcessor.addVehiclePosition(s));
     }
 }

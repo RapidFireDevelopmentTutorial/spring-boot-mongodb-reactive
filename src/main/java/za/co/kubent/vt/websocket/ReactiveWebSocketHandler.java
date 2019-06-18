@@ -6,17 +6,17 @@ import org.springframework.web.reactive.socket.WebSocketHandler;
 import org.springframework.web.reactive.socket.WebSocketMessage;
 import org.springframework.web.reactive.socket.WebSocketSession;
 import reactor.core.publisher.Mono;
-import za.co.kubent.vt.VehiclePositionEmitter;
+import za.co.kubent.vt.VehiclePositionEmitterProcessor;
 
 @Component
 public class ReactiveWebSocketHandler implements WebSocketHandler {
 
     @Autowired
-    private VehiclePositionEmitter queueService;
+    private VehiclePositionEmitterProcessor vehiclePositionEmitterProcessor;
 
     @Override
     public Mono<Void> handle(WebSocketSession webSocketSession) {
-        return webSocketSession.send(queueService.getVehiclePositions().map(vehicle -> vehicle.getId())
+        return webSocketSession.send(vehiclePositionEmitterProcessor.getVehiclePositions().map(vehicle -> vehicle.getId())
                 .map(webSocketSession::textMessage))
                 .and(webSocketSession.receive()
                         .map(WebSocketMessage::getPayloadAsText)

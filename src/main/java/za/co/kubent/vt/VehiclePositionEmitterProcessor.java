@@ -6,15 +6,15 @@ import reactor.core.publisher.Flux;
 import za.co.kubent.vt.domain.VehiclePosition;
 
 @Component
-public class VehiclePositionEmitter {
+public class VehiclePositionEmitterProcessor {
 
-        private EmitterProcessor<VehiclePosition> emitterProcessor;
+    private EmitterProcessor<VehiclePosition> emitterProcessor;
 
     private Flux<VehiclePosition> vehiclePositions;
 
-    public VehiclePositionEmitter() {
+    public VehiclePositionEmitterProcessor() {
         emitterProcessor = EmitterProcessor.create();
-        vehiclePositions = emitterProcessor.publish().autoConnect();;
+        vehiclePositions = emitterProcessor.publish().autoConnect();
     }
 
     public void addVehiclePosition(VehiclePosition vehiclePosition) {
