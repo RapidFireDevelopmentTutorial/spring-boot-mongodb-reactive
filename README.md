@@ -15,7 +15,7 @@ This example application will consume vehicle positional GPS data from RabbitMQ,
 * [GIT](https://git-scm.com/downloads)
 * [Docker](https://www.docker.com/get-started)
 
-###Docker Containers 
+### Docker Containers 
 
 `$ docker run -d --name rabbitmq -p 5672:5672 rabbitmq:3`
 
