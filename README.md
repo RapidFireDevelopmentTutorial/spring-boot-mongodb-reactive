@@ -1,7 +1,7 @@
 # Vehicle Tracking with Spring Boot Reactive
 
 
-This example application will consume vehicle positional GPS data from RabbitMQ, save the data into MongoDB and process the messages and publish via web sockets and HTTP streams. 
+This example application will consume vehicle positional GPS data from RabbitMQ, save the data into MongoDB, process the messages and publish via web sockets and HTTP streams. 
 
 * Spring Data Reactive MongoDB
 * Reactive WebSocket
