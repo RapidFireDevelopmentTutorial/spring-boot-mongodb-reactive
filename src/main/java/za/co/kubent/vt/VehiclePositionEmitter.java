@@ -3,6 +3,7 @@ package za.co.kubent.vt;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.EmitterProcessor;
 import reactor.core.publisher.Flux;
+import za.co.kubent.vt.domain.VehiclePosition;
 
 @Component
 public class VehiclePositionEmitter {
