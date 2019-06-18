@@ -1,4 +1,4 @@
-package za.co.cella.VehicleTracking;
+package za.co.kubent.vt;
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;

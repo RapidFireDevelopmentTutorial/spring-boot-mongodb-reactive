@@ -1,4 +1,4 @@
-package za.co.cella.VehicleTracking;
+package za.co.kubent.vt;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

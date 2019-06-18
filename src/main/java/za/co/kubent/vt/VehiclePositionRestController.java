@@ -1,4 +1,4 @@
-package za.co.cella.VehicleTracking;
+package za.co.kubent.vt;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

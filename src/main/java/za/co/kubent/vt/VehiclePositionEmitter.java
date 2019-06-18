@@ -1,7 +1,6 @@
-package za.co.cella.VehicleTracking;
+package za.co.kubent.vt;
 
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import reactor.core.publisher.EmitterProcessor;
 import reactor.core.publisher.Flux;
 
