@@ -6,7 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
-import za.co.kubent.vt.VehiclePositionEmitterProcessor;
+import za.co.kubent.vt.processor.VehiclePositionEmitterProcessor;
 import za.co.kubent.vt.domain.VehiclePosition;
 
 @RestController
