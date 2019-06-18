@@ -1,4 +1,4 @@
-package za.co.kubent.vt;
+package za.co.kubent.vt.queue;
 
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.EmitterProcessor;

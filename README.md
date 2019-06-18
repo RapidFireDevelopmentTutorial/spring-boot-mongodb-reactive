@@ -1,5 +1,7 @@
 # Vehicle Tracking using Spring Data Reactive MongoDB
 
+Consume vehicle positional data from RabbitMQ, process the messages and present the data on Google Maps with generated events such as geo-fence hits using MongoDB Geospatial queries. 
+
 ## Prerequisites
 
 * [RabbitMQ](https://spring.io/guides/gs/messaging-rabbitmq/)

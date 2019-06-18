@@ -1,4 +1,4 @@
-package za.co.kubent.vt.configuration;
+package za.co.kubent.vt.websocket;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

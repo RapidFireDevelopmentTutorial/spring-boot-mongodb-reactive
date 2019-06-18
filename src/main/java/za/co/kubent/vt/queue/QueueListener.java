@@ -1,4 +1,4 @@
-package za.co.kubent.vt;
+package za.co.kubent.vt.queue;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;

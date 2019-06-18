@@ -1,4 +1,4 @@
-package za.co.kubent.vt;
+package za.co.kubent.vt.websocket;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -6,6 +6,7 @@ import org.springframework.web.reactive.socket.WebSocketHandler;
 import org.springframework.web.reactive.socket.WebSocketMessage;
 import org.springframework.web.reactive.socket.WebSocketSession;
 import reactor.core.publisher.Mono;
+import za.co.kubent.vt.queue.VehiclePositionEmitter;
 
 @Component
 public class ReactiveWebSocketHandler implements WebSocketHandler {
