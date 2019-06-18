@@ -6,6 +6,7 @@ import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
 import reactor.core.publisher.Flux;
+import za.co.kubent.vt.VehiclePositionEmitter;
 import za.co.kubent.vt.domain.VehiclePosition;
 import za.co.kubent.vt.repository.VehiclePositionRepository;
 

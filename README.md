@@ -1,6 +1,11 @@
-# Vehicle Tracking using Spring Data Reactive MongoDB
+# Vehicle Tracking with Spring Boot Reactive
 
-Consume vehicle positional data from RabbitMQ, process the messages and present the data on Google Maps with generated events such as geo-fence hits using MongoDB Geospatial queries. 
+
+This example application will consume vehicle positional GPS data from RabbitMQ, save the data into MongoDB and process the messages and publish via web sockets and HTTP streams. 
+
+* Spring Data Reactive MongoDB
+* Reactive WebSocket
+* HTTP Stream (Using a FLUX)
 
 ## Prerequisites
 
@@ -8,4 +13,10 @@ Consume vehicle positional data from RabbitMQ, process the messages and present 
 * [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 * [MongoDB](https://www.mongodb.com/download-center/community)
 * [GIT](https://git-scm.com/downloads)
+* [Docker](https://www.docker.com/get-started)
 
+###Docker Containers 
+
+`$ docker run -d --name rabbitmq -p 5672:5672 rabbitmq:3`
+
+`$ docker run -d -p 27017-27019:27017-27019 --name mongodb mongo:4.0.4`

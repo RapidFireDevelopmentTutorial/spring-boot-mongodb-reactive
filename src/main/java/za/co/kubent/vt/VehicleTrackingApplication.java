@@ -12,7 +12,6 @@ import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.support.MessageBuilder;
 import reactor.core.publisher.Flux;
 import za.co.kubent.vt.domain.VehiclePosition;
-import za.co.kubent.vt.queue.VehiclePositionEmitter;
 
 import java.time.Duration;
 

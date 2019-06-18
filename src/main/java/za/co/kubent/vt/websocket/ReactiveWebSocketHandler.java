@@ -6,7 +6,7 @@ import org.springframework.web.reactive.socket.WebSocketHandler;
 import org.springframework.web.reactive.socket.WebSocketMessage;
 import org.springframework.web.reactive.socket.WebSocketSession;
 import reactor.core.publisher.Mono;
-import za.co.kubent.vt.queue.VehiclePositionEmitter;
+import za.co.kubent.vt.VehiclePositionEmitter;
 
 @Component
 public class ReactiveWebSocketHandler implements WebSocketHandler {

@@ -1,4 +1,4 @@
-package za.co.kubent.vt.queue;
+package za.co.kubent.vt;
 
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.EmitterProcessor;
@@ -8,7 +8,7 @@ import za.co.kubent.vt.domain.VehiclePosition;
 @Component
 public class VehiclePositionEmitter {
 
-    private EmitterProcessor<VehiclePosition> emitterProcessor;
+        private EmitterProcessor<VehiclePosition> emitterProcessor;
 
     private Flux<VehiclePosition> vehiclePositions;
 
